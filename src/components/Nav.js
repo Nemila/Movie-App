@@ -9,7 +9,7 @@ const Nav = ({ setFiltered, setModal }) => {
   };
   return (
     <Navbar>
-      <h1>Movies</h1>
+      <h1>RockyReels</h1>
       <Button onClick={handleFil}>Favoris</Button>
     </Navbar>
   );

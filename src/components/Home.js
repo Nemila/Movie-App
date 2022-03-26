@@ -80,10 +80,7 @@ const Home = () => {
         )}
       </Container>
       <Footer>
-        <p>
-          Created by Lamine assisted by Alassane | All rights reserved 2022 -
-          2023
-        </p>
+        <p>Created by Lamine assisted by Alassane | 2022 - 2023</p>
       </Footer>
     </>
   );

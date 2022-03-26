@@ -38,7 +38,6 @@ export const Footer = styled.div`
   background-color: #444444;
   & p {
     font-style: italic;
-
     font-size: 12px;
   }
 `;
