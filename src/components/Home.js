@@ -31,7 +31,6 @@ const Home = () => {
 
   useEffect(() => {
     localStorage.setItem("favoriteMovies", JSON.stringify(favoris));
-    console.log("hi");
   }, [favoris]);
 
   return (
@@ -60,7 +59,6 @@ const Home = () => {
                 movie={movie}
                 favoris={favoris}
                 setFavoris={setFavoris}
-                filtered={filtered}
                 setModal={setModal}
                 setModalParams={setModalParams}
               />
@@ -72,7 +70,6 @@ const Home = () => {
                 movie={movie}
                 favoris={favoris}
                 setFavoris={setFavoris}
-                filtered={filtered}
                 setModal={setModal}
                 setModalParams={setModalParams}
               />

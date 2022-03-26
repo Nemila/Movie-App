@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledModal, ExitButton } from "./styled/Modal.styled";
 import { Img } from "./styled/Img.styled";
-import { Button } from "./styled/Button.styled";
+import { Button, ButtonLink } from "./styled/Button.styled";
 import exit from "../assets/exit.svg";
 
 const Modal = ({
@@ -12,6 +12,7 @@ const Modal = ({
     vote_average: vote,
     isFav,
     overview: sum,
+    release_date: date,
   },
   favoris,
   setFavoris,
@@ -35,11 +36,18 @@ const Modal = ({
           poster_path: poster,
           overview: sum,
           isFav: true,
+          release_date: date,
         },
         ...prevFav,
       ]);
     }
   };
+
+  let s_title = title.toLowerCase().split(" ");
+  let s_date = date.split("-");
+
+  s_title = s_title.join("-");
+  s_date = s_date[0];
 
   return (
     <StyledModal>
@@ -60,6 +68,14 @@ const Modal = ({
         <Button bg="#DA0037" color="#fff" onClick={handleFav}>
           {filtered ? "Remove" : "Add"}
         </Button>
+        <ButtonLink
+          bg="#DA0037"
+          color="#fff"
+          href={`https://www.cimacinema.com/${s_title}-${s_date}`}
+          onClick={handleFav}
+        >
+          Watch
+        </ButtonLink>
       </div>
       <ExitButton bg="#DA0037" color="#fff">
         <img

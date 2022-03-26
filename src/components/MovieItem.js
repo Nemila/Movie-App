@@ -4,7 +4,14 @@ import { Img } from "./styled/Img.styled";
 import star from "../assets/star.svg";
 
 const MovieItem = ({
-  movie: { id, title, vote_average: vote, poster_path: poster, overview: sum },
+  movie: {
+    id,
+    title,
+    vote_average: vote,
+    poster_path: poster,
+    overview: sum,
+    release_date: date,
+  },
   favoris,
   setFavoris,
   filtered,
@@ -18,6 +25,7 @@ const MovieItem = ({
       vote_average: vote,
       poster_path: poster,
       overview: sum,
+      release_date: date,
     });
     setModal(true);
   };
