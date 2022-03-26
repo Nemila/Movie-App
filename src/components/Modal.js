@@ -72,7 +72,6 @@ const Modal = ({
           bg="#DA0037"
           color="#fff"
           href={`https://www.cimacinema.com/${s_title}-${s_date}`}
-          onClick={handleFav}
         >
           Watch
         </ButtonLink>
