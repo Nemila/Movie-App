@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Sep, MovieContainer } from "./styled/Home.styled";
+import { Container, Sep, MovieContainer, Footer } from "./styled/Home.styled";
 import { Button } from "./styled/Button.styled";
 import MovieItem from "./MovieItem";
 import NextPage from "./NextPage";
@@ -79,6 +79,12 @@ const Home = () => {
           <NextPage pageIndex={pageIndex} setPageIndex={setPageIndex} />
         )}
       </Container>
+      <Footer>
+        <p>
+          Created by Lamine assisted by Alassane | All rights reserved 2022 -
+          2023
+        </p>
+      </Footer>
     </>
   );
 };
