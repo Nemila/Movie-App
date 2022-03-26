@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
         color: #EDEDED;
         font-family: Quicksand;
     }
+
+    p, span {
+        line-height: 20px;
+    }
 `;

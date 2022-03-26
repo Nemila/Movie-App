@@ -36,4 +36,9 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #444444;
+  & p {
+    font-style: italic;
+
+    font-size: 12px;
+  }
 `;
