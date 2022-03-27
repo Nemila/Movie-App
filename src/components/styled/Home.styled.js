@@ -28,19 +28,3 @@ export const MovieContainer = styled.div`
   justify-content: space-around;
   justify-items: center;
 `;
-
-export const Footer = styled.div`
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #444444;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  & p {
-    font-style: italic;
-    font-size: 12px;
-  }
-`;

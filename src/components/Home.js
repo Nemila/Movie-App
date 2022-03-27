@@ -79,9 +79,6 @@ const Home = () => {
           <NextPage pageIndex={pageIndex} setPageIndex={setPageIndex} />
         )}
       </Container>
-      <Footer>
-        <p>Created by Lamine assisted by Alassane | 2022 - 2023</p>
-      </Footer>
     </>
   );
 };
