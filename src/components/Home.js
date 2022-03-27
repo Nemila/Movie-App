@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Sep, MovieContainer, Footer } from "./styled/Home.styled";
+import { Container, Sep, MovieContainer } from "./styled/Home.styled";
 import { Button } from "./styled/Button.styled";
 import MovieItem from "./MovieItem";
 import NextPage from "./NextPage";
