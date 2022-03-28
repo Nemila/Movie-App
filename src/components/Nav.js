@@ -1,16 +1,17 @@
 import React from "react";
-import { Navbar } from "./styled/Nav.styled";
-import { Button } from "./styled/Button.styled";
+import { Navbar, NavLink } from "./styled/Nav.styled";
 
-const Nav = ({ setFiltered, setModal }) => {
-  let handleFil = () => {
-    setFiltered((prev) => !prev);
-    setModal(false);
-  };
+const Nav = () => {
   return (
     <Navbar>
-      <h1>RockyReels</h1>
-      <Button onClick={handleFil}>Favoris</Button>
+      <NavLink to="/" fontSize={24}>
+        RockyReels
+      </NavLink>
+      <div>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/movies/1">Movies</NavLink>
+        <NavLink to="/favoris">Favoris</NavLink>
+      </div>
     </Navbar>
   );
 };

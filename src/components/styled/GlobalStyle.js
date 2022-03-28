@@ -14,6 +14,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p, span {
-        line-height: 20px;
+        line-height: 28px;
     }
 `;

@@ -1,17 +1,27 @@
 import React from "react";
-import { Button } from "./styled/Button.styled";
-import { StyledCont, StyledNumber } from "./styled/NexPage.styled";
+import { StyledLink } from "./styled/Button.styled";
+import { StyledCont, StyledNumber } from "./styled/NextPage.styled";
+import { PropTypes } from "prop-types";
 
-const Nextpage = ({ pageIndex, setPageIndex }) => {
+const Nextpage = ({ pageIndex, totalPages }) => {
+  let page = parseInt(pageIndex);
+  let nextPage = page + 1;
+  let prevPage = page - 1;
+
   return (
     <StyledCont>
-      {pageIndex !== 1 && (
-        <Button onClick={() => setPageIndex((prev) => prev - 1)}>Prev</Button>
+      {page !== 1 && <StyledLink to={"/movies/" + prevPage}>Prev</StyledLink>}
+      <StyledNumber>{page}</StyledNumber>
+      {page < totalPages && (
+        <StyledLink to={"/movies/" + nextPage}>Next</StyledLink>
       )}
-      <StyledNumber>{pageIndex}</StyledNumber>
-      <Button onClick={() => setPageIndex((prev) => prev + 1)}>Next</Button>
     </StyledCont>
   );
+};
+
+Nextpage.propTypes = {
+  pageIndex: PropTypes.string.isRequired,
+  totalPages: PropTypes.number.isRequired,
 };
 
 export default Nextpage;
