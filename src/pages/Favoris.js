@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Container, MovieContainer } from "../components/styled/Favoris.styled";
 import { NavLink } from "../components/styled/Nav.styled";
 import MovieItem from "../components/MovieItem";
@@ -22,6 +23,15 @@ const Favoris = ({ favoris, setFavoris }) => {
       </MovieContainer>
     </Container>
   );
+};
+
+Favoris.propTypes = {
+  favoris: PropTypes.array.isRequired,
+  setFavoris: PropTypes.func.isRequired,
+};
+
+Favoris.defaultProps = {
+  favoris: [],
 };
 
 export default Favoris;

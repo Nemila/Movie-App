@@ -2,17 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Button = styled.button`
+  display: flex;
+  gap: 0.5rem;
   color: ${({ color }) => color || `black`};
   background-color: ${({ bg }) => bg || `whitesmoke`};
 
   outline: none;
   border: none;
-  border-radius: 2em;
+  border-radius: 0.2em;
   cursor: pointer;
 
-  padding: 0.7em 2em;
+  padding: 8px 10px;
   font-size: 1em;
-  font-weight: bold;
 
   transition: 0.5s ease all;
 
@@ -26,7 +27,7 @@ export const ButtonLink = styled.a`
   color: ${({ color }) => color || `black`};
   background-color: ${({ bg }) => bg || `whitesmoke`};
 
-  padding: 0.7em 2em;
+  padding: 8px 10px;
   font-weight: bold;
   border-radius: 2em;
 

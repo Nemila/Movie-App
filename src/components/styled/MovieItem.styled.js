@@ -28,6 +28,7 @@ export const Card = styled.div`
   }
   & p {
     font-size: 12px;
+    line-height: 1rem;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -38,17 +39,21 @@ export const Card = styled.div`
     height: 200px;
     object-fit: cover;
   }
+  & > button {
+    padding: 2px;
+  }
 `;
 
 export const Badge = styled.span`
-  position: absolute;
-  padding: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0 4px;
+  background: rgba(0, 0, 0, 0.8);
   font-size: 12px;
+  position: absolute;
   top: 4px;
-  left: 4px;
-  & > img {
-    width: 12px;
-    margin-right: 8px;
-  }
+  ${({ right }) => (right ? "left: 4px" : "right: 4px")};
 `;

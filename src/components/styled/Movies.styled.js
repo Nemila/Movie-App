@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 80%;
+  min-height: 100vh;
 
   margin: 2.5rem auto 0 auto;
   padding: 2rem;
@@ -9,6 +10,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  & form small {
+    opacity: 0.6;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -23,6 +28,7 @@ export const MovieContainer = styled.div`
   align-content: center;
   justify-content: space-around;
   justify-items: center;
+  flex-grow: 1;
 `;
 
 export const Pending = styled.div`
@@ -47,5 +53,24 @@ export const Pending = styled.div`
     to {
       transform: rotate(180deg);
     }
+  }
+`;
+
+export const Input = styled.input`
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #4444;
+  color: white;
+  margin: 1rem 0;
+  padding: 1rem 1rem;
+  width: 100%;
+  & small {
+    display: inline-block;
+    margin: 16px 0;
+  }
+  &:focus {
+    outline: 2px solid #da0037;
+    box-shadow: 0 0 10px 0 #da0037;
   }
 `;

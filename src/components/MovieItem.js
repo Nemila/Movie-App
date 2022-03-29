@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Badge } from "./styled/MovieItem.styled";
-import star from "../assets/star.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MovieItem = ({
   movie: {
@@ -19,7 +19,6 @@ const MovieItem = ({
     if (isMovieInFavoris) {
       let filteredList = favoris.filter((movie) => movie.title !== title);
       setFavoris(filteredList);
-      alert("Removed from your favoris");
     } else {
       setFavoris([
         {
@@ -32,21 +31,29 @@ const MovieItem = ({
         },
         ...favoris,
       ]);
-      alert("Added to your favoris");
     }
   };
 
   return (
     <>
-      <Card onClick={manageFavoris}>
+      <Card>
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster}`}
           alt={`poster of ${title}`}
         />
         <p> {title} </p>
         <Badge>
-          <img src={star} alt="star icon" />
+          <FontAwesomeIcon color="yellow" icon="fa-solid fa-star" />
           {vote}
+        </Badge>
+        <Badge right={true} onClick={manageFavoris}>
+          Favoris
+          <FontAwesomeIcon
+            color={
+              favoris.find((movie) => movie.title === title) ? "red" : "white"
+            }
+            icon="fa-solid fa-heart"
+          />
         </Badge>
       </Card>
     </>
