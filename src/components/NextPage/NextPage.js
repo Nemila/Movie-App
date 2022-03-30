@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledLink } from "./styled/Button.styled";
-import { StyledCont, StyledNumber } from "./styled/NextPage.styled";
+import { StyledLink } from "../Styled/Button.styled";
+import { StyledCont, StyledNumber } from "./NextPage.styled";
 import { PropTypes } from "prop-types";
 
 const Nextpage = ({ pageIndex, totalPages }) => {

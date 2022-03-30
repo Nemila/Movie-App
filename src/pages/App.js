@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import Nav from "../components/Nav";
+import Nav from "../components/Navbar/Nav";
 
 // Pages
-import Home from "./Home";
+import Home from "./Home/index";
 import Movies from "./Movies";
-import Favoris from "./Favoris";
-import Error from "./Error";
+import Favoris from "./Favoris/index";
+import Error from "./Error/index";
 
 const App = () => {
   let [favoris, setFavoris] = useState(

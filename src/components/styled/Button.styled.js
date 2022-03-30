@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Button = styled.button`
   display: flex;
   gap: 0.5rem;
-  color: ${({ color }) => color || `black`};
+  color: ${({ color }) => color || `white`};
   background-color: ${({ bg }) => bg || `whitesmoke`};
 
   outline: none;
@@ -51,6 +51,7 @@ export const StyledLink = styled(Link)`
   border-radius: 2em;
 
   text-decoration: none;
+
   text-align: center;
 
   transition: 0.5s ease all;
