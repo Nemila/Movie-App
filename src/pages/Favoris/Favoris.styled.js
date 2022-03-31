@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const StyledFavoris = styled.div`
+  width: 80%;
+  margin: 5rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 export const MovieContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 150px);
@@ -9,7 +19,7 @@ export const MovieContainer = styled.div`
   justify-content: space-around;
   justify-items: center;
 `;
-export const NavLink = styled(Link)`
+export const ResetFavBtn = styled(Link)`
   text-decoration: none;
   margin: 0 16px;
   color: white;

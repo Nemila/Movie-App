@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { MovieContainer, NavLink } from "./Favoris.styled";
-import { Container } from "../../components/Styled/Container.styled";
+import { StyledFavoris, ResetFavBtn, MovieContainer } from "./Favoris.styled";
 import MovieItem from "../../components/MovieItem/MovieItem";
 
 const Favoris = ({ favoris, setFavoris }) => {
   return (
-    <Container>
-      <NavLink to="/favoris" onClick={() => setFavoris([])}>
+    <StyledFavoris>
+      <ResetFavBtn to="/favoris" onClick={() => setFavoris([])}>
         Reset my favoris list
-      </NavLink>
+      </ResetFavBtn>
       <MovieContainer>
         {favoris &&
           favoris.map((movie) => (
@@ -21,7 +20,7 @@ const Favoris = ({ favoris, setFavoris }) => {
             />
           ))}
       </MovieContainer>
-    </Container>
+    </StyledFavoris>
   );
 };
 

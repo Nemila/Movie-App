@@ -4,6 +4,7 @@ import { app_config } from "../../utils/datas";
 
 export const Navbar = styled.nav`
   width: 100%;
+  height: 80px;
 
   position: absolute;
   top: 0;
