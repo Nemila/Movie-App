@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Badge } from "./MovieItem.styled";
+import { Card, Poster, Badge, CardDesc } from "./MovieItemElements";
 import Modal from "../../components/Modal/Modal";
 
 const MovieItem = ({
@@ -26,7 +26,7 @@ const MovieItem = ({
       sum: sum,
       date: date,
     });
-    setModal(true);
+    setModal(!modal);
   };
   return (
     <>
@@ -35,14 +35,14 @@ const MovieItem = ({
         setFavoris={setFavoris}
         favoris={favoris}
         modal={modal}
-        setModal={setModal}
+        handleModal={handleModal}
       />
       <Card onClick={handleModal}>
-        <img
+        <Poster
           src={`https://image.tmdb.org/t/p/w500/${poster}`}
           alt={`poster of ${title}`}
         />
-        <p> {title} </p>
+        <CardDesc>{title}</CardDesc>
         <Badge>{vote}</Badge>
         <Badge right={true}>Favoris</Badge>
       </Card>

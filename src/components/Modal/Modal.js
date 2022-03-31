@@ -10,7 +10,7 @@ import {
   TextBox,
 } from "./ModalElements";
 
-function Modal({ modalParams, favoris, setFavoris, modal, setModal }) {
+function Modal({ modalParams, favoris, setFavoris, modal, handleModal }) {
   let manageFavoris = () => {
     let isMovieInFavoris = favoris.find(
       (movie) => movie.title === modalParams.title
@@ -34,11 +34,8 @@ function Modal({ modalParams, favoris, setFavoris, modal, setModal }) {
       ]);
     }
   };
-  function exitModal() {
-    modal && setModal(false);
-  }
   return (
-    <StyledModal modal={modal} onClick={exitModal}>
+    <StyledModal modal={modal} onClick={handleModal}>
       <ModalTitle>{modalParams.title}</ModalTitle>
       <BadgeContainer>
         <Badge>{modalParams.vote}</Badge>

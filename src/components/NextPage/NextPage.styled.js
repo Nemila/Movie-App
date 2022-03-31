@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledCont = styled.div`
   display: flex;
@@ -11,3 +12,5 @@ export const StyledNumber = styled.div`
   height: 10px;
   text-align: center;
 `;
+
+export const StyledLink = styled(Link)``;

@@ -12,6 +12,11 @@ export const Card = styled.div`
 
   position: relative;
 
+  &:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px 0 black;
+  }
+
   transition: 0.5s ease all;
   animation: landing 0.5s linear 1;
   @keyframes landing {
@@ -21,26 +26,6 @@ export const Card = styled.div`
     to {
       transform: scale(1);
     }
-  }
-  &:hover {
-    transform: scale(0.95);
-    box-shadow: 0 0 5px 0 black;
-  }
-  & p {
-    font-size: 12px;
-    line-height: 1rem;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  & > img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  & > button {
-    padding: 2px;
   }
 `;
 
@@ -56,4 +41,18 @@ export const Badge = styled.span`
   position: absolute;
   top: 4px;
   ${({ right }) => (right ? "left: 4px" : "right: 4px")};
+`;
+
+export const CardDesc = styled.p`
+  font-size: 12px;
+  line-height: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
+export const Poster = styled.img`
+  width: 100%;
+  object-fit: cover;
 `;

@@ -1,14 +1,17 @@
 import React from "react";
-import { app_config } from "../../utils/datas";
-import { StyledHome, Content, Desc, StartBtn } from "./Home.styled";
+import { StyledHome, Content, Desc, StartBtn, Title } from "./HomeElements";
 
 const Home = () => {
   return (
     <StyledHome>
       <Content>
-        <h2>{app_config.home.title}</h2>
-        <Desc>{app_config.home.desc}</Desc>
-        <StartBtn to="/movies/1">{app_config.home.btnText}</StartBtn>
+        <Title>Rocky reels is the best free movie manager</Title>
+        <Desc>
+          Discover new movies, manage your favorite ones and watch them for free
+          on our website. No account required, no adds or redirects, just you
+          and your movies. Just press the button below and begin your adventure!
+        </Desc>
+        <StartBtn to="/movies/1">Start Now</StartBtn>
       </Content>
     </StyledHome>
   );

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Pending = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 40%;
   transform: translate(-50%, -50%);
 
   width: 64px;

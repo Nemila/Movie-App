@@ -1,5 +1,4 @@
 import React from "react";
-import { StyledLink } from "../Styled/Button.styled";
 import { StyledCont, StyledNumber } from "./NextPage.styled";
 import { PropTypes } from "prop-types";
 
