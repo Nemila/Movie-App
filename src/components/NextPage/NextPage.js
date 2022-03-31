@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCont, StyledNumber } from "./NextPage.styled";
+import { StyledCont, StyledNumber, StyledLink } from "./NextPageElements";
 import { PropTypes } from "prop-types";
 
 const Nextpage = ({ pageIndex, totalPages }) => {

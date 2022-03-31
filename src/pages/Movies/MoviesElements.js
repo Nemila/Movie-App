@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 
 export const MovieContainer = styled.div`
+  margin: 2rem 0;
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, 150px);

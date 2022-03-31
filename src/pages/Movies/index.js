@@ -1,5 +1,5 @@
 // React
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -20,15 +20,33 @@ import {
 // Components
 import MovieItem from "../../components/MovieItem/MovieItem";
 import NextPage from "../../components/NextPage/NextPage";
-import useFetch from "../../components/Hooks/useFetch.js";
 
 const Movies = ({ favoris, setFavoris }) => {
   let { pageIndex } = useParams();
 
-  // Get API's Datas
-  let { data, error, pending } = useFetch(
-    `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9b761130dd428aca1816daeb0b306519&page=${pageIndex}`
-  );
+  let [data, setData] = useState(null);
+  let [pending, setPending] = useState(true);
+  let [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=9b761130dd428aca1816daeb0b306519&page=${pageIndex}`
+    )
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("Could not fetch");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setData(data);
+        setPending(false);
+      })
+      .catch((error) => {
+        setPending(false);
+        setError(error.message);
+      });
+  }, [pageIndex]);
 
   return (
     <>
