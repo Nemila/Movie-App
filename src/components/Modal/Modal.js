@@ -1,27 +1,16 @@
-import React, { useRef, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { AiFillHeart } from "react-icons/ai";
+import { FaHeartBroken } from "react-icons/fa";
+
 import {
   StyledModal,
   ModalTitle,
   BadgeContainer,
   Badge,
   TextBox,
-} from "./Modal.styled";
+} from "./ModalElements";
 
-export default function Modal({
-  modalParams,
-  favoris,
-  setFavoris,
-  modal,
-  setModal,
-}) {
-  let myModal = useRef(null);
-
-  useEffect(() => {
-    modal && myModal.current.focus();
-  }, [modal]);
-
+function Modal({ modalParams, favoris, setFavoris, modal, setModal }) {
   let manageFavoris = () => {
     let isMovieInFavoris = favoris.find(
       (movie) => movie.title === modalParams.title
@@ -45,30 +34,25 @@ export default function Modal({
       ]);
     }
   };
-  let resetModal = () => {
+  function exitModal() {
     modal && setModal(false);
-  };
+  }
   return (
-    <StyledModal ref={myModal} tabIndex={0} modal={modal} onBlur={resetModal}>
+    <StyledModal modal={modal} onClick={exitModal}>
       <ModalTitle>{modalParams.title}</ModalTitle>
       <BadgeContainer>
-        <Badge>
-          <FontAwesomeIcon icon={faStar} color={"gold"} />
-          {modalParams.vote}
-        </Badge>
+        <Badge>{modalParams.vote}</Badge>
         <Badge onClick={manageFavoris}>
-          <FontAwesomeIcon
-            icon={faHeart}
-            color={
-              favoris.find((movie) => movie.title === modalParams.title)
-                ? "red"
-                : "white"
-            }
-          />
+          {favoris.find((movie) => movie.title === modalParams.title) ? (
+            <FaHeartBroken />
+          ) : (
+            <AiFillHeart />
+          )}
         </Badge>
       </BadgeContainer>
       <TextBox>{modalParams.sum}</TextBox>
-      <Badge onClick={resetModal}>Exit</Badge>
     </StyledModal>
   );
 }
+
+export default Modal;

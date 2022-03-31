@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
 import Nav from "../components/Navbar/Nav";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 // Pages
-import Home from "./Home/index";
+import Home from "./Home";
 import Movies from "./Movies";
-import Favoris from "./Favoris/index";
-import Error from "./Error/index";
+import Favoris from "./Favoris";
+import Error from "./Error";
 
-const App = () => {
+function App() {
   let [favoris, setFavoris] = useState(
     localStorage.getItem("favoriteMovies")
       ? JSON.parse(localStorage.getItem("favoriteMovies"))
@@ -21,10 +22,15 @@ const App = () => {
     localStorage.setItem("favoriteMovies", JSON.stringify(favoris));
   }, [favoris]);
 
+  let [isOpen, setIsOpen] = useState(false);
+  function toggle() {
+    setIsOpen(!isOpen);
+  }
   return (
     <>
       <Router>
-        <Nav />
+        <Nav toggle={toggle} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
         <Routes>
           <Route path="*" element={<Error />} />
           <Route exact path="/" element={<Home />} />
@@ -42,6 +48,6 @@ const App = () => {
       </Router>
     </>
   );
-};
+}
 
 export default App;

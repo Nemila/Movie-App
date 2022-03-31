@@ -3,10 +3,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
-// Images
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
 // Styled
 import { MovieContainer, Input } from "./Movies.styled";
 import { Button } from "../../components/Styled/Button.styled";
@@ -46,7 +42,6 @@ const Movies = ({ favoris, setFavoris }) => {
           />
           <Button bg={"#DA0037"} color={"#fff"}>
             Search
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Button>
         </form>
 

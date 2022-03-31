@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Card, Badge } from "./MovieItem.styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../components/Modal/Modal";
 
 const MovieItem = ({
@@ -45,19 +43,8 @@ const MovieItem = ({
           alt={`poster of ${title}`}
         />
         <p> {title} </p>
-        <Badge>
-          <FontAwesomeIcon color="gold" icon={faStar} />
-          {vote}
-        </Badge>
-        <Badge right={true}>
-          Favoris
-          <FontAwesomeIcon
-            color={
-              favoris.find((movie) => movie.title === title) ? "red" : "white"
-            }
-            icon={faHeart}
-          />
-        </Badge>
+        <Badge>{vote}</Badge>
+        <Badge right={true}>Favoris</Badge>
       </Card>
     </>
   );

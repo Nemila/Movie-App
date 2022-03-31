@@ -1,55 +1,47 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faHeart,
-  faClapperboard,
-  faBars,
-} from "@fortawesome/free-solid-svg-icons";
-import { app_config } from "../../utils/datas";
+import React from "react";
+import { FaBars } from "react-icons/fa";
 
 // Style
-import { Navbar, NavLink, NavToggle, ToggleBar, Logo } from "./Nav.styled";
+import {
+  Navbar,
+  NavbarContainer,
+  Logo,
+  LogoIcon,
+  ToggleBtn,
+  NavMenu,
+  NavItem,
+  NavLink,
+} from "./NavElements";
 
-const Nav = () => {
-  let [toggle, setToggle] = useState(false);
-
+function Nav({ toggle }) {
   return (
     <>
       <Navbar>
-        <Logo to="/">{app_config.navbar.logoText}</Logo>
-        <div>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies/1">Movies</NavLink>
-          <NavLink to="/favoris">Favoris</NavLink>
-        </div>
-        <NavToggle onClick={() => setToggle(!toggle)}>
-          <FontAwesomeIcon icon={faBars} />
-        </NavToggle>
+        <NavbarContainer>
+          <Logo to="/">
+            <LogoIcon />
+            RockyReels
+          </Logo>
+          <ToggleBtn onClick={toggle}>
+            <FaBars />
+          </ToggleBtn>
+          <NavMenu>
+            <NavItem>
+              <NavLink to="/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/movies/1">Movies</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/favoris" className="active">
+                Favoris
+              </NavLink>
+            </NavItem>
+          </NavMenu>
+        </NavbarContainer>
       </Navbar>
-
-      <ToggleBar showed={toggle}>
-        <Navbar>
-          <Logo to="/">{app_config.navbar.logoText}</Logo>
-          <NavToggle onClick={() => setToggle(!toggle)}>
-            <FontAwesomeIcon icon={faBars} />
-          </NavToggle>
-        </Navbar>
-        <div>
-          <NavLink onClick={() => setToggle(false)} to="/">
-            <FontAwesomeIcon icon={faHouse} /> Home
-          </NavLink>
-          <NavLink onClick={() => setToggle(false)} to="/movies/1">
-            <FontAwesomeIcon icon={faClapperboard} /> Movies
-          </NavLink>
-          <NavLink onClick={() => setToggle(false)} to="/favoris">
-            <FontAwesomeIcon icon={faHeart} />
-            Favoris
-          </NavLink>
-        </div>
-      </ToggleBar>
     </>
   );
-};
+}
 
 export default Nav;
