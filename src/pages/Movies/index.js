@@ -14,8 +14,8 @@ import {
   SearchIcon,
   ErrorMessage,
   ErrorIcon,
+  Pending,
 } from "./MoviesElements";
-import { Pending } from "../../components/Styled/Pending";
 
 // Components
 import MovieItem from "../../components/MovieItem/MovieItem";
