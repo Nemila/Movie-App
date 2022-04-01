@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillHeart } from "react-icons/ai";
+import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { FaHeartBroken } from "react-icons/fa";
 
 import {
@@ -38,7 +38,9 @@ function Modal({ modalParams, favoris, setFavoris, modal, handleModal }) {
     <StyledModal modal={modal} onClick={handleModal}>
       <ModalTitle>{modalParams.title}</ModalTitle>
       <BadgeContainer>
-        <Badge>{modalParams.vote}</Badge>
+        <Badge>
+          <AiFillStar /> {modalParams.vote}
+        </Badge>
         <Badge onClick={manageFavoris}>
           {favoris.find((movie) => movie.title === modalParams.title) ? (
             <FaHeartBroken />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Poster, Badge, CardDesc } from "./MovieItemElements";
 import Modal from "../../components/Modal/Modal";
+import { AiFillHeart, AiFillStar } from "react-icons/ai";
 
 const MovieItem = ({
   movie: {
@@ -43,8 +44,18 @@ const MovieItem = ({
           alt={`poster of ${title}`}
         />
         <CardDesc>{title}</CardDesc>
-        <Badge>{vote}</Badge>
-        <Badge right={true}>Favoris</Badge>
+        <Badge>
+          <AiFillStar color="gold" />
+          {vote}
+        </Badge>
+        <Badge right={true}>
+          Favoris
+          <AiFillHeart
+            color={
+              favoris.find((movie) => movie.title === title) ? "red" : "white"
+            }
+          />
+        </Badge>
       </Card>
     </>
   );
